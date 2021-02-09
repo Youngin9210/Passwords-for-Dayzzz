@@ -16,7 +16,6 @@ var generatePassword = function () {
   //  if charLength is bewteen 8 and 128,
   if (charLength > 7 && charLength < 129) {
 
-    console.log(charLength);
 
     // confrim character type to be used in password
     var lowerChar = confirm('Would you like to include lowercase?');
@@ -46,6 +45,30 @@ var generatePassword = function () {
     var charM = upperCase;
     var charN = numbers;
     var charO = special;
+
+    // 
+    if (lowerChar && upperChar && numberChar && specialChar) {
+      console.log(charA)
+      for (var i = 0; i < charLength; i++) {
+        randomPass += charA.charAt(Math.floor(Math.random() * charA.length));
+      }
+      console.log(randomPass);
+      return randomPass;
+    } else if (lowerChar && upperChar && numberChar && !specialChar) {
+      console.log(charB)
+      for (var i = 0; i < charLength; i++) {
+        randomPass += charB.charAt(Math.floor(Math.random() * charB.length));
+      }
+      console.log(randomPass);
+      return randomPass;
+    } else if (lowerChar && upperChar && !numberChar && specialChar) {
+      console.log(charC)
+      for (var i = 0; i < charLength; i++) {
+        randomPass += charC.charAt(Math.floor(Math.random() * charC.length));
+      }
+      console.log(randomPass);
+      return randomPass;
+    }
 
 
   } else {
