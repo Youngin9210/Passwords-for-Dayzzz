@@ -18,10 +18,10 @@ var generatePassword = function () {
 
 
     // confrim character type to be used in password
-    var lowerChar = confirm('Would you like to include lowercase?');
-    var upperChar = confirm('Would you like to include uppercase?');
-    var numberChar = confirm('Would you like to include numbers?');
-    var specialChar = confirm('Would you like to include special characters?');
+    var lowerChar = confirm('Would you like to include LOWERCASE? Click "Ok" for YES or "Cancel" for NO.');
+    var upperChar = confirm('Would you like to include UPPERCASE? Click "Ok" for YES or "Cancel" for NO.');
+    var numberChar = confirm('Would you like to include NUMBERS? Click "Ok" for YES or "Cancel" for NO.');
+    var specialChar = confirm('Would you like to include SPECIAL CHARACTERS? Click "Ok" for YES or "Cancel" for NO.');
 
     // if no character type selected
     if (!lowerChar && !upperChar && !numberChar && !specialChar) {
@@ -30,52 +30,105 @@ var generatePassword = function () {
     }
     
     // setting character variations to be used for password
-    var charA = lowerCase + upperCase + numbers + special; // done
-    var charB = lowerCase + upperCase + numbers; // done
-    var charC = lowerCase + upperCase + special; // done
-    var charD = lowerCase + special + numbers;
-    var charE = special + upperCase + numbers;
-    var charF = lowerCase + upperCase;
-    var charG = lowerCase + numbers;
-    var charH = lowerCase + special;
-    var charI = upperCase + numbers;
-    var charJ = upperCase + special;
-    var charK = numbers + special;
-    var charL = lowerCase;
-    var charM = upperCase;
-    var charN = numbers;
-    var charO = special;
+    var charA = lowerCase + upperCase + numbers + special; // if done
+    var charB = lowerCase + upperCase + numbers; // if done
+    var charC = lowerCase + upperCase + special; // if done
+    var charD = lowerCase + special + numbers; // if done
+    var charE = special + upperCase + numbers; // if done
+    var charF = lowerCase + upperCase; // if done
+    var charG = lowerCase + numbers; // if done
+    var charH = lowerCase + special; // if done
+    var charI = upperCase + numbers; // if done
+    var charJ = upperCase + special; // if done
+    var charK = numbers + special; // if done
 
-    // 
+    // if statements for all variations to return the password
     if (lowerChar && upperChar && numberChar && specialChar) {
-      console.log(charA)
       for (var i = 0; i < charLength; i++) {
         randomPass += charA.charAt(Math.floor(Math.random() * charA.length));
       }
-      console.log(randomPass);
       return randomPass;
     } else if (lowerChar && upperChar && numberChar && !specialChar) {
-      console.log(charB)
       for (var i = 0; i < charLength; i++) {
         randomPass += charB.charAt(Math.floor(Math.random() * charB.length));
       }
-      console.log(randomPass);
       return randomPass;
     } else if (lowerChar && upperChar && !numberChar && specialChar) {
-      console.log(charC)
       for (var i = 0; i < charLength; i++) {
         randomPass += charC.charAt(Math.floor(Math.random() * charC.length));
       }
-      console.log(randomPass);
+      return randomPass;
+    } else if (lowerChar && !upperChar && numberChar && specialChar) {
+      for (var i = 0; i < charLength; i++) {
+        randomPass += charD.charAt(Math.floor(Math.random() * charD.length));
+      }
+      return randomPass;
+    } else if (!lowerChar && upperChar && numberChar && specialChar) {
+      for (var i = 0; i < charLength; i++) {
+        randomPass += charE.charAt(Math.floor(Math.random() * charE.length));
+      }
+      return randomPass;
+    } else if (lowerChar && !upperChar && numberChar && !specialChar) {
+      for (var i = 0; i < charLength; i++) {
+        randomPass += charF.charAt(Math.floor(Math.random() * charF.length));
+      }
+      return randomPass;
+    } else if (lowerChar && upperChar && !numberChar && !specialChar) {
+      for (var i = 0; i < charLength; i++) {
+        randomPass += charG.charAt(Math.floor(Math.random() * charG.length));
+      }
+      return randomPass;
+    } else if (lowerChar && !upperChar && !numberChar && specialChar) {
+      for (var i = 0; i < charLength; i++) {
+        randomPass += charH.charAt(Math.floor(Math.random() * charH.length));
+      }
+      return randomPass;
+    } else if (!lowerChar && upperChar && numberChar && !specialChar) {
+      for (var i = 0; i < charLength; i++) {
+        randomPass += charI.charAt(Math.floor(Math.random() * charI.length));
+      }
+      return randomPass;
+    } else if (!lowerChar && upperChar && !numberChar && specialChar) {
+      for (var i = 0; i < charLength; i++) {
+        randomPass += charJ.charAt(Math.floor(Math.random() * charJ.length));
+      }
+      return randomPass;
+    } else if (!lowerChar && upperChar && numberChar && !specialChar) {
+      for (var i = 0; i < charLength; i++) {
+        randomPass += charI.charAt(Math.floor(Math.random() * charI.length));
+      }
+      return randomPass;
+    } else if (!lowerChar && !upperChar && numberChar && specialChar) {
+      for (var i = 0; i < charLength; i++) {
+        randomPass += charK.charAt(Math.floor(Math.random() * charK.length));
+      }
+      return randomPass;
+    } else if (lowerChar && !upperChar && !numberChar && !specialChar) {
+      for (var i = 0; i < charLength; i++) {
+        randomPass += lowerCase.charAt(Math.floor(Math.random() * lowerCase.length));
+      }
+      return randomPass;
+    } else if (!lowerChar && upperChar && !numberChar && !specialChar) {
+      for (var i = 0; i < charLength; i++) {
+        randomPass += upperCase.charAt(Math.floor(Math.random() * upperCase.length));
+      }
+      return randomPass;
+    } else if (!lowerChar && !upperChar && numberChar && !specialChar) {
+      for (var i = 0; i < charLength; i++) {
+        randomPass += numbers.charAt(Math.floor(Math.random() * numbers.length));
+      }
+      return randomPass;
+    } else if (!lowerChar && !upperChar && !numberChar && specialChar) {
+      for (var i = 0; i < charLength; i++) {
+        randomPass += special.charAt(Math.floor(Math.random() * special.length));
+      }
       return randomPass;
     }
-
 
   } else {
     // then alert restart and choose a number between 8 and 128
     alert('Please choose a length bewteen 8 and 128.  Press "Generate Password" to restart.');
   }
-  
 
 }
 
