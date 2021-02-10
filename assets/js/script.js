@@ -7,11 +7,12 @@ var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';;
 var numbers = '0123456789';
 var special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
-var randomPass = "";
-
 var generatePassword = function () {
   // declaring length prompt and converting to a number
   var charLength = Number(prompt('Choose a desired character length between 8 and 128?'));
+  
+  // sets random password to an empty string at the beginning of the function.
+  var randomPass = "";
 
   //  if charLength is bewteen 8 and 128 AND the number is a whole integer,
   if ((charLength > 7 && charLength < 129) && Number.isInteger(charLength)) {
@@ -126,7 +127,7 @@ var generatePassword = function () {
     }
 
   } else {
-    // then alert restart and choose a number between 8 and 128
+    // then alert restart and choose a WHOLE number between 8 and 128
     alert('Please choose a length bewteen 8 and 128.  Length must be a WHOLE integer.  Press "Generate Password" to restart.');
   }
 
