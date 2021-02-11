@@ -18,7 +18,7 @@ Check it out here https://github.com/Youngin9210/Passwords-for-Dayzzz
 
 ## Screenshots
 
-![image](Assets/Images/passwordGenerator.png)
+![image](assets/images/passwordGenerator.png)
 
 ## Installation
 
