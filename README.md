@@ -6,7 +6,7 @@ Week 3 Homework for OSU Bootcamp
 
 This webpage uses DOM munipulation to generate random passwords based on criteria selected by the user.  The criteria is selected using a series of prompts and confirms after the "Generate Password" button has been clicked.
 
-Check it out here https://github.com/Youngin9210/Passwords-for-Dayzzz
+Check it out here https://youngin9210.github.io/Passwords-for-Dayzzz/
 
 ## Table of Contents
 
