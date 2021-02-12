@@ -129,6 +129,7 @@ var generatePassword = function () {
   } else {
     // then alert restart and choose a WHOLE number between 8 and 128
     alert('Please choose a length bewteen 8 and 128.  Length must be a WHOLE integer.  Press "Generate Password" to restart.');
+    return randomPass;
   }
 
 }
